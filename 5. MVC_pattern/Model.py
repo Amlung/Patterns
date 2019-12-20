@@ -10,8 +10,8 @@ class Person(object):
 
     @classmethod     
     def getAll(self):
-        db = ET.parse("D:\\GitHub\Patterns\\5.MVC_pattern\\db.xml")
-        root = db.getroot()
+        #for some reasons the relative path is not working -_-
+        root = ET.parse("D:\\GitHub\Patterns\\5. MVC_pattern\\db.xml").getroot()
         result = []
         for child in root:
             person = Person(child.find("First_Name").text, child.find("Last_Name").text)
